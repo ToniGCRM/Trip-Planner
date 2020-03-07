@@ -1,3 +1,16 @@
-<div>
-  <% render 'users/form'%>
+<h1>Create a new user</hi>
+<br/>
+<div class = 'form'>
+  <%= form_for [@user] do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true  %>
+    <%= f.label :email %>
+    <%= f.text_field :email, required: true  %>
+    <%= f.submit %>
+  <% end %>
 </div>
+
+<footer>
+  <div> <%= link_to 'Go back', users_path %></div>
+  <div> <%= link_to 'Home', users_path %></div>
+</footer>

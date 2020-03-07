@@ -7,12 +7,13 @@ class UsersController < ApplicationController
     # before_action
   end
   def new
-    @user = Users.new
+    @user = User.new
   end
   def create
-    if @user.save(user_params)
+    @user = User.new(user_params)
+    if @user.save
       # render show page
-      redirect_to user_path(@user)
+      redirect_to users_path
     else
       render :new
     end

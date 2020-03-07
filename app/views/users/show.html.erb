@@ -6,6 +6,10 @@
     <p>Email: <%= @user.email %> </p>
 </div>
 
+<div>
+  <%= link_to 'View Trips', user_trips_path(@user)%>
+</div>
+
 <footer>
   <div> <%= link_to 'Go back', users_path %></div>
   <div> <%= link_to 'Home', users_path %></div>
