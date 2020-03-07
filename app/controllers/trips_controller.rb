@@ -11,7 +11,7 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trip = @user.trips.new
+    @trip = @user.trips.new 
   end
 
   def edit

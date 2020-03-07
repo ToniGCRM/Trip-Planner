@@ -5,3 +5,4 @@
   <li><%= link_to location.name, [@trip, location] %></li>
   <% end %>
   </ul>
+  <%= link_to 'Back to trip', user_trips_path(@trip.user_id) %>
