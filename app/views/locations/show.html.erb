@@ -1,2 +1,13 @@
-<h1>Locations#show</h1>
-<p>Find me in app/views/locations/show.html.erb</p>
+<h1>Locations</h1>
+
+<h3>
+<%= @location.name %>
+<%= @location.description %>
+</h3>
+
+<a class= <%= link_to 'Click here to go back to create a new location! ★~(◠‿◕✿) ', trip_locations_path(@trip) %></a>
+<br/>
+
+<%= link_to 'Delete this Location Of Your Trip! (✖╭╮✖)', [@trip, @location], method: :delete %>
+
+

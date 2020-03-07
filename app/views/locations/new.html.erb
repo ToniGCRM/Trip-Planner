@@ -1,2 +1,7 @@
-<h1>Locations#new</h1>
-<p>Find me in app/views/locations/new.html.erb</p>
+<div class = 'form'>
+  <%= form_for [@trip, @location] do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true  %>
+    <%= f.submit %>
+  <% end %>
+</div>
