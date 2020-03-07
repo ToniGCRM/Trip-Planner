@@ -1,8 +1,9 @@
 class AddressesController < ApplicationController
   before_action :set_location
   before_action :set_address, only: [:show, :edit, :update, :destroy]
+  
   def index
-    @addresses = @location.address.all
+    @addresses = @location.addresses.all
   end
   def show
     # before_action
