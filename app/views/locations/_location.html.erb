@@ -1,3 +1,5 @@
+<h1><%= @location.id ? 'Edit' : 'New' %></hi>
+<br/>
 <div class = 'form'>
   <%= form_for [@trip, @location] do |f| %>
     <%= f.label :name %>

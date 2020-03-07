@@ -1,5 +1,4 @@
 
-
 5.times do
   user = User.create(
       name: Faker::TvShows::StrangerThings.character,
