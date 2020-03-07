@@ -1,17 +1,17 @@
 <h1><%= @user.name %> <%= @trip.name %></h1>
 <%= link_to 'Back to Trips', user_trips_path(@user) %>
 <div>
-<table>
+<table class="table table-striped">
 <thead>
 <tr>
-  <th> Location </th>
-  <th> Description </th>
+  <th scope="col"> Location </th>
+  <th scope="col"> Description </th>
   </tr>
 </thead>
 <tbody>
 <tr>
  <% @trip.locations.each do |location| %>
-   <td> <%= location.name %> <td>
+  <td> <%= location.name %> <td>
     <td> <%= location.description %> </td>
   <%end%>
 </tr>
