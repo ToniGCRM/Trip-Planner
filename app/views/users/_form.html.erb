@@ -1,4 +1,4 @@
-<h1>Edit User: <%= @user.name %></hi>
+<h1><%= @user.id ? 'Edit' : 'New' %></hi>
 <br/>
 <div class = 'form'>
   <%= form_for [@user] do |f| %>
@@ -9,4 +9,3 @@
     <%= f.submit %>
   <% end %>
 </div>
-

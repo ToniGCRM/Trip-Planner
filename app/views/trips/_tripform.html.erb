@@ -1,0 +1,24 @@
+<h1><%= @trip.id ? 'Edit' : 'New' %></hi>
+<br/>
+<div class = 'form'>
+  <%= form_for [@user, @trip] do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true  %>
+
+    <%= f.label :start_date %>
+    <%= f.text_field :start_date, "data-provide" => 'datepicker' %>
+
+    <%= f.label :end_date %>
+    <%= f.text_field :end_date, "data-provide" => 'datepicker' %>
+
+    <%= f.label :budget %>
+    <%= f.number_field :budget, required: true  %>
+
+    <%= f.label :participants %>
+    <%= f.number_field :participants, required: true  %>
+
+    <%= f.submit %>
+  <% end %>
+
+</div>
