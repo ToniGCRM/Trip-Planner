@@ -1,0 +1,20 @@
+<h1>Edit User: <%= @location.name %> address:</hi>
+<br/>
+<div class = 'form'>
+  <%= form_for [@location, @address] do |f| %>
+    <%= f.label :city %>
+    <%= f.text_field :city, required: true  %>
+    <%= f.label :state %>
+    <%= f.text_field :state, required: true  %>
+    <%= f.label :zip %>
+    <%= f.text_field :zip, required: true  %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+<footer>
+  <div> <%= link_to 'Go back', location_addresses_path(@location)%></div>
+  <div> <%= link_to 'Home', users_path %></div>
+  <div> <%= link_to 'Delete', user_path(@user.id), method: :delete %></div>
+</footer>
+

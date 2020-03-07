@@ -2,7 +2,7 @@ class AddressesController < ApplicationController
   before_action :set_location
   before_action :set_address, only: [:show, :edit, :update, :destroy]
   def index
-    @address = @location.addresses.all
+    @addresses = @location.address.all
   end
   def show
     # before_action
@@ -11,7 +11,8 @@ class AddressesController < ApplicationController
     @address = @location.address.new
   end
   def create
-    if @address.save(address_params)
+    @address = @location.address.new(address_params)
+    if @address.save
       # render show page
       redirect_to location_addresses_path(@location)
     else
@@ -22,11 +23,16 @@ class AddressesController < ApplicationController
     # before_action
   end
   def update
-    if @address.update
+    if @address.update(address_params)
       redirect_to location_addresses_path(@location)
     else
       render :edit
     end
+  end
+
+  def destroy
+    @address.destroy
+    redirect_to location_addresses_path(@location)
   end
   private
   def set_location

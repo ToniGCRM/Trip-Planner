@@ -1,2 +1,15 @@
-<h1>Addresses#index</h1>
-<p>Find me in app/views/addresses/index.html.erb</p>
+<h1>Addresses</h1>
+
+<div class="container">
+  <div class="record">
+  <% @addresses.each do |add|%>
+    <ul>
+      <li><%= add.city %></li>
+      <li><%= add.state%></li>
+      <li><%= add.zip%></li>
+    </ul>
+    <%end%>
+  </div>
+</div>
+
+<div><%= link_to 'Create a new user', new_user_path %></div>
