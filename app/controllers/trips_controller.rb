@@ -7,7 +7,7 @@ class TripsController < ApplicationController
   end
 
   def show
-    @trip = @user.trip.find(params[:id])
+    @trip = @user.trips.find(params[:id])
   end
 
   def new
@@ -20,7 +20,7 @@ class TripsController < ApplicationController
   def create
     @trip = @user.trips.new(trip_params)
     if @trip.save
-      redirect_to trips_path
+      redirect_to [@user, @trip]
     else
       render :new
     end
@@ -49,7 +49,7 @@ class TripsController < ApplicationController
   end
 
   def trip_params
-    params.require(:trips).permit(
+    params.require(:trip).permit(
       :name, 
       :start_date, 
       :end_date, 
