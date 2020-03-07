@@ -1,2 +1,28 @@
-<h1>Trips#show</h1>
-<p>Find me in app/views/trips/show.html.erb</p>
+<h1><%= @user.name %> <%= @trip.name %></h1>
+<%= link_to 'Back to Trips', user_trips_path(@user) %>
+<div>
+<table>
+<thead>
+<tr>
+  <th> Location </th>
+  <th> Description </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+ <% @trip.locations.each do |location| %>
+   <td> <%= location.name %> <td>
+    <td> <%= location.description %> </td>
+  <%end%>
+</tr>
+</tbody>
+</table>
+<%= link_to 'Add new Location', new_trip_location_path(@trip) %>
+</div>
+
+<div>
+<%= link_to 'Edit Trip Details', edit_user_trip_path(@user, @trip) %>
+<br/>
+<%= link_to 'Delete this Trip', [@user, @trip], method: :delete %>
+<br/>
+</div>
